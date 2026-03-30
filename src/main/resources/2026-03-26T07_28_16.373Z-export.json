@@ -1,0 +1,151 @@
+{
+  "features": [
+    {
+      "name": "ff_site_id",
+      "description": null,
+      "type": "kill-switch",
+      "project": "default",
+      "stale": false,
+      "impressionData": false,
+      "archived": false
+    },
+    {
+      "name": "ff_with_context",
+      "description": null,
+      "type": "kill-switch",
+      "project": "default",
+      "stale": false,
+      "impressionData": false,
+      "archived": false
+    },
+    {
+      "name": "test_feature_flag",
+      "description": "This feature flag is for testing",
+      "type": "kill-switch",
+      "project": "default",
+      "stale": false,
+      "impressionData": false,
+      "archived": false
+    }
+  ],
+  "featureStrategies": [
+    {
+      "name": "flexibleRollout",
+      "id": "544876e3-8cc5-4cc2-a11b-27b165fa4fd3",
+      "featureName": "ff_site_id",
+      "title": null,
+      "parameters": {
+        "groupId": "ff_site_id",
+        "rollout": "100",
+        "stickiness": "default"
+      },
+      "constraints": [
+        {
+          "values": [
+            "Toronto"
+          ],
+          "inverted": false,
+          "operator": "IN",
+          "contextName": "siteId",
+          "caseInsensitive": false
+        }
+      ],
+      "variants": [],
+      "disabled": false,
+      "segments": []
+    },
+    {
+      "name": "flexibleRollout",
+      "id": "2885d23a-5fe4-41ba-a03e-04c2566affe6",
+      "featureName": "ff_with_context",
+      "title": "100% of all users",
+      "parameters": {
+        "groupId": "ff_with_context",
+        "rollout": "100",
+        "stickiness": "default"
+      },
+      "constraints": [
+        {
+          "values": [
+            "HP"
+          ],
+          "inverted": false,
+          "operator": "IN",
+          "contextName": "providerId",
+          "caseInsensitive": false
+        }
+      ],
+      "variants": [],
+      "disabled": false,
+      "segments": []
+    },
+    {
+      "name": "flexibleRollout",
+      "id": "40310787-d579-4f4b-8a87-2579aa7e7ee3",
+      "featureName": "test_feature_flag",
+      "title": null,
+      "parameters": {
+        "groupId": "test_feature_flag",
+        "rollout": "100",
+        "stickiness": "default"
+      },
+      "constraints": [],
+      "variants": [],
+      "disabled": false,
+      "segments": []
+    }
+  ],
+  "featureEnvironments": [
+    {
+      "enabled": true,
+      "featureName": "ff_site_id",
+      "environment": "development",
+      "variants": [],
+      "name": "ff_site_id"
+    },
+    {
+      "enabled": true,
+      "featureName": "ff_with_context",
+      "environment": "development",
+      "variants": [],
+      "name": "ff_with_context"
+    },
+    {
+      "enabled": true,
+      "featureName": "test_feature_flag",
+      "environment": "development",
+      "variants": [],
+      "name": "test_feature_flag"
+    }
+  ],
+  "contextFields": [
+    {
+      "name": "providerId",
+      "description": "provider Id",
+      "stickiness": false,
+      "sortOrder": 0,
+      "legalValues": [
+        {
+          "value": "HP",
+          "description": ""
+        },
+        {
+          "value": "Nokia",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "siteId",
+      "description": "",
+      "stickiness": false,
+      "sortOrder": 0,
+      "legalValues": []
+    }
+  ],
+  "featureTags": [],
+  "segments": [],
+  "tagTypes": [],
+  "dependencies": [],
+  "links": []
+}
