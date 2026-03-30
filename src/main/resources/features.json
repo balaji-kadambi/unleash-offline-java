@@ -1,0 +1,68 @@
+{
+  "version": 2,
+  "features": [
+    {
+      "name": "ff_site_id",
+      "type": "kill-switch",
+      "enabled": true,
+      "strategies": [
+        {
+          "name": "flexibleRollout",
+          "parameters": {
+            "groupId": "ff_site_id",
+            "rollout": "100",
+            "stickiness": "default"
+          },
+          "constraints": [
+            {
+              "values": ["Toronto"],
+              "inverted": false,
+              "operator": "IN",
+              "contextName": "siteId",
+              "caseInsensitive": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ff_with_context",
+      "type": "kill-switch",
+      "enabled": true,
+      "strategies": [
+        {
+          "name": "flexibleRollout",
+          "parameters": {
+            "groupId": "ff_with_context",
+            "rollout": "100",
+            "stickiness": "default"
+          },
+          "constraints": [
+            {
+              "values": ["HP"],
+              "inverted": false,
+              "operator": "IN",
+              "contextName": "providerId",
+              "caseInsensitive": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "test_feature_flag",
+      "type": "kill-switch",
+      "enabled": true,
+      "strategies": [
+        {
+          "name": "flexibleRollout",
+          "parameters": {
+            "groupId": "test_feature_flag",
+            "rollout": "100",
+            "stickiness": "default"
+          }
+        }
+      ]
+    }
+  ]
+}
